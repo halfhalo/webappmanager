@@ -66,7 +66,7 @@
 
 #ifdef HAS_NYX
 #include <nyx/nyx_client.h>
-#endif HAS_NYX
+#endif // HAS_NYX
 
 #define MESSAGES_INTERNAL_FILE "SysMgrMessagesInternal.h"
 #include <PIpcMessageMacros.h>
@@ -218,7 +218,9 @@ WebAppManager::WebAppManager()
     setenv("QT_DEBUG_PLUGINS", "1", 1);
 
 #if defined(TARGET_DEVICE)
-    static const char *argv[] = { "./WebAppManager", "-platform", "minimal", NULL };
+    static const char *argv[] = { "./WebAppManager", "-platform", "webos", NULL };
+#elif defined(TARGET_DESKTOP)
+    static const char *argv[] = { "./WebAppManager", "-platform", "xcb", NULL };
 #else
     static const char *argv[] = { "./WebAppManager", "-platform", "minimal", NULL };
 #endif
