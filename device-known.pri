@@ -69,3 +69,9 @@ contains(MACHINE_NAME, "tuna") {
     CONFIG_BUILD += opengl
     LIBS += -lqpalm
 }
+contains(MACHINE_NAME, "slate") {
+    DEFINES += MACHINE_SLATE HAS_PALM_QPA
+    CONFIG_BUILD += webosdevice nyx
+#    CONFIG_BUILD += opengl
+    LIBS += -lqpalm
+}
