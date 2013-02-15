@@ -218,7 +218,7 @@ WebAppManager::WebAppManager()
     setenv("QT_DEBUG_PLUGINS", "1", 1);
 
 #if defined(TARGET_DEVICE)
-    static const char *argv[] = { "./WebAppManager", "-platform", "webos", NULL };
+    static const char *argv[] = { "./WebAppManager", "-platform", "minimal", NULL };
 #elif defined(TARGET_DESKTOP)
     static const char *argv[] = { "./WebAppManager", "-platform", "xcb", NULL };
 #else
